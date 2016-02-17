@@ -8,7 +8,7 @@
     </value>
     <statement name="DO">
       <block type="controls_if" id="14" inline="false">
-        <mutation elseif="1"></mutation>
+        <mutation elseif="2"></mutation>
         <value name="IF0">
           <block type="logic_compare" id="45" inline="true">
             <field name="OP">LT</field>
@@ -57,6 +57,41 @@
                 <field name="NUM">0</field>
               </block>
             </value>
+          </block>
+        </statement>
+        <value name="IF2">
+          <block type="logic_compare" id="123" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="124">
+                <field name="OBJECT">REAR</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="125">
+                <field name="NUM">75</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="led_select" id="126" inline="true">
+            <field name="ACTION">FLASH</field>
+            <value name="LED">
+              <block type="math_number" id="127">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+            <next>
+              <block type="led_select" id="128" inline="true">
+                <field name="ACTION">FLASH</field>
+                <value name="LED">
+                  <block type="math_number" id="129">
+                    <field name="NUM">3</field>
+                  </block>
+                </value>
+              </block>
+            </next>
           </block>
         </statement>
         <next>
